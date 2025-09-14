@@ -8,6 +8,45 @@
   --spacing: 1rem;
   --font-family: system-ui, sans-serif;
 }
+/* Utility classes for forage.html refactor */
+.ub-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.ub-flex-align {
+  align-items: flex-start;
+}
+.ub-card {
+  flex: 1 1 220px;
+  max-width: 220px;
+  box-sizing: border-box;
+  margin: 0;
+}
+.ub-card-wide {
+  min-width: 280px;
+}
+.ub-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+.ub-mb-1 {
+  margin-bottom: 1rem;
+}
+.ub-mt-2 {
+  margin-top: 2rem;
+}
+
+.ub-link-highlight {
+  font-size: 1.1em;
+  color: #007a33;
+  font-weight: 500;
+  text-decoration: underline;
+}
 html {
   box-sizing: border-box;
   font-family: var(--font-family);

@@ -1,0 +1,11 @@
+# Urban Bees Website .gitignore
+# Ignore minified files and build artifacts
+css/styles.min.css
+js/main.min.js
+sitemap.xml
+# Ignore OS/Editor files
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.env
