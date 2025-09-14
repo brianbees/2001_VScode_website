@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Urban Bees</title>
+  <meta name="description" content="Contact Urban Bees. Send us your questions or feedback.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <nav class="navbar" aria-label="Primary">
+      <div class="logo"><a href="index.html">Urban Bees</a></div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">☰</button>
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bees.html">Bees</a></li>
+        <li><a href="bee-forage.html">Bee Forage</a></li>
+        <li><a href="partnerships.html">Partnerships</a></li>
+        <li><a href="links.html">Links</a></li>
+        <li><a href="videos.html">Videos</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <h1>Contact</h1>
+      <p>Send us your questions or feedback using the form below.</p>
+      <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST" aria-live="polite">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+        <label for="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          I consent to the privacy policy.
+        </label>
+        <button type="submit">Send</button>
+        <div id="form-status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>© <span id="year"></span> Urban Bees • <a href="contact.html">Contact</a></p>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+/* Urban Bees Global Styles */
+:root {
+  --color-primary: #ffd700;
+  --color-secondary: #333;
+  --color-bg: #fffbe6;
+  --color-accent: #4caf50;
+  --color-error: #d32f2f;
+  --spacing: 1rem;
+  --font-family: system-ui, sans-serif;
+}
+html {
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  background: var(--color-bg);
+  color: var(--color-secondary);
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  padding: var(--spacing);
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 0;
+}
+header {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  padding: var(--spacing) 0;
+}
+.logo a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing);
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+  background: var(--color-accent);
+  color: #fff;
+}
+.nav-links a:focus {
+  outline: 2px solid var(--color-accent);
+}
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-primary);
+    display: none;
+    z-index: 99;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing);
+}
+.hero {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 2rem;
+  margin-bottom: var(--spacing);
+}
+footer {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  text-align: center;
+  padding: var(--spacing);
+  margin-top: 2rem;
+}
+input, textarea, button {
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: var(--spacing);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+input:focus, textarea:focus, button:focus {
+  outline: 2px solid var(--color-accent);
+}
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+button[type="submit"] {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+}
+button[type="submit"]:hover {
+  background: #388e3c;
+}
+.blog-list {
+  display: grid;
+  gap: var(--spacing);
+}
+.blog-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1rem;
+}
+.date {
+  font-size: 0.9rem;
+  color: #888;
+}
+.excerpt {
+  margin-top: 0.5rem;
+}
+#form-status {
+  margin-top: 1rem;
+  min-height: 1.5em;
+  color: var(--color-error);
+}
