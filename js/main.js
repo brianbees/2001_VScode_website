@@ -6,22 +6,23 @@ document.addEventListener('DOMContentLoaded', function () {
   const yearSpan = document.getElementById('year');
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-  // Nav toggle
+  // Sidebar nav toggle
   const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.getElementById('primary-nav');
-  if (navToggle && navLinks) {
+  const sidebar = document.getElementById('sidebar-nav');
+  if (navToggle && sidebar) {
     navToggle.addEventListener('click', function () {
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', !expanded);
-      navLinks.classList.toggle('open');
+      sidebar.classList.toggle('open');
+      sidebar.setAttribute('aria-hidden', expanded);
       if (!expanded) {
-        navLinks.querySelector('a').focus();
+        sidebar.querySelector('a').focus();
       }
     });
-    // Trap focus in nav when open
-    navLinks.addEventListener('keydown', function (e) {
-      if (!navLinks.classList.contains('open')) return;
-      const focusable = navLinks.querySelectorAll('a');
+    // Trap focus in sidebar when open
+    sidebar.addEventListener('keydown', function (e) {
+      if (!sidebar.classList.contains('open')) return;
+      const focusable = sidebar.querySelectorAll('a');
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
       if (e.key === 'Tab') {
@@ -34,15 +35,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
       if (e.key === 'Escape') {
-        navLinks.classList.remove('open');
+        sidebar.classList.remove('open');
+        sidebar.setAttribute('aria-hidden', true);
         navToggle.setAttribute('aria-expanded', false);
         navToggle.focus();
       }
     });
-    // Close menu on link click
-    navLinks.addEventListener('click', function (e) {
+    // Close sidebar on link click
+    sidebar.addEventListener('click', function (e) {
       if (e.target.tagName === 'A') {
-        navLinks.classList.remove('open');
+        sidebar.classList.remove('open');
+        sidebar.setAttribute('aria-hidden', true);
+        navToggle.setAttribute('aria-expanded', false);
+      }
+    });
+    // Optional: close sidebar when clicking outside
+    document.addEventListener('click', function (e) {
+      if (sidebar.classList.contains('open') && !sidebar.contains(e.target) && e.target !== navToggle) {
+        sidebar.classList.remove('open');
+        sidebar.setAttribute('aria-hidden', true);
         navToggle.setAttribute('aria-expanded', false);
       }
     });
